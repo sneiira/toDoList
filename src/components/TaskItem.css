@@ -1,0 +1,48 @@
+.task-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #636262;
+  border-radius: 8px;
+  width: fit-content;
+  background-color: #f4f4f4;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.custom-checkbox :hover {
+  transform: translateY(-3px);
+  box-shadow: 6px 6px 10px rgba(100, 100, 100, 0.5);
+  border-radius: 10px;
+}
+
+.custom-checkbox {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  
+}
+
+.custom-checkbox input[type="checkbox"] {
+  display: none; /* Oculta el checkbox original */
+}
+
+.icon {
+  font-size: 2rem;
+  color: #999;
+  transition: color 0.2s ease;
+}
+
+.icon.checked {
+  color: #00bb38; /* cambia el color si está marcado */
+}
+
+.task-text {
+  margin-right: 10px;
+  font-size: 1rem;
+}
+
+.task-text.completed {
+  text-decoration: line-through;
+  color: #888;
+}

@@ -1,0 +1,22 @@
+.list-card {
+    display: flex;
+    width: 200px;
+    height: 30px;
+    background-color: #f9f9f9;
+    border: 1px solid #000000;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 10px;
+    justify-content: left;
+    align-items: center;
+    overflow: hidden;
+    font-size: 15px;
+    color : #000000;
+    text-decoration: dashed;
+}
+
+.list-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 6px 6px 10px rgba(100, 100, 100, 0.5);
+  color : #00a74b;
+}
