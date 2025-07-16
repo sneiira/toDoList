@@ -5,6 +5,7 @@ import { MdOutlineCheckBox } from "react-icons/md";
 function TaskItem({ text }) {
   const [completed, setCompleted] = useState(false);
 
+  // Función que cambia el estado completed de true a false y viceversa
   const toggleCheckbox = () => {
     setCompleted(!completed);
   };
