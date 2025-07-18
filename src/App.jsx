@@ -4,26 +4,30 @@ import { useState } from 'react'
 import './App.css'
 import ListCard from './components/ListCard'
 import ListView from './components/ListView';
+import AddPopUp from './components/AddPopUp';
 
 function App() {
   // Estado para almacenar las listas, su titulo,id y tareas
   const [lists, setLists] = useState([]); 
+  // Estado para controlar la visibilidad del popup
+  const [showAddListPopUp, setShowAddListPopUp] = useState(false);
 
   // Función que se ejecuta al hacer clic en el botón de "añadir lista"
   const handleAddList = () => {
-    // Solicita al usuario el título de la nueva lista
-    const newListTitle = prompt("Enter the title for the new list:");
-    // Si el usuario proporciona un título no vacío o formado por espacios, crea una nueva lista y la agrega al estado
-    if(newListTitle.trim()) {
-      const newList = {
-        id: Date.now(), // Genera un ID único basado en la fecha actual
-        title: newListTitle, // Título de la nueva lista
-        tasks: [] // Inicializa la lista de tareas como un array vacío
-      };
-      // Actualiza el estado de las listas añadiendo la nueva lista al final del array con el operador spread (...)
-      setLists([...lists, newList]);
-    }
+    // Cambia el estado de showAddListPopup a true para mostrar el popup
+    setShowAddListPopUp(true);
   };
+
+  // Función que se envia al componente AddPopUp para añadir una nueva lista
+  const addList = (title) => {
+    const newList = {
+      id: Date.now(), // Genera un ID único basado en la fecha y hora actual
+      title: title, // Título de la lista
+      tasks: [] // Array de tareas inicializado como vacío
+    };
+    setLists([...lists, newList]); // Actualiza el estado de las listas añadiendo la nueva lista al final del array con el operador spread (...)
+  };
+
 
   // Función para agregar una tarea a una lista específica
   // Recibe el ID de la lista y la tarea a agregar
@@ -75,6 +79,14 @@ function App() {
                 <VscDiffAdded />
               </button>
             </div>
+            {showAddListPopUp && (
+              <AddPopUp
+                title="Add new list"
+                placeholder="List title"
+                onAdd={addList}
+                onClose={() => setShowAddListPopUp(false)}
+              />
+            )}
           </>
         } />
           {/* Ruta para ver una lista específica, recibe el ID de la lista como parámetro */}
