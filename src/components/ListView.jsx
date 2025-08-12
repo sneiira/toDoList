@@ -3,6 +3,8 @@ import { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import './ListView.css';
 import TaskItem from './TaskItem';
+import { IoIosArrowBack } from "react-icons/io";
+import AddPopUp from './AddPopUp';
 
 function ListView({ lists, addTaskToList }) { 
   // Obtenemos el ID de la lista desde los parámetros de la URL
@@ -16,10 +18,17 @@ function ListView({ lists, addTaskToList }) {
   // Estado para controlar el input de la nueva tarea
   const [newTask, setNewTask] = useState('');
 
-  // Añadir tarea a la lista
+  // Estado para controlar la visibilidad del popup
+  const [showAddTaskPopUp, setShowAddTaskPopUp] = useState(false);
+
   const handleAddTask = () => {
-    if (newTask.trim()) {
-      addTaskToList(list.id, newTask);  // llamar a la función que actualiza en App.js
+    setShowAddTaskPopUp(true);
+  }
+
+  // Añadir tarea a la lista
+  const addTask = (taskTitle) => {
+    if (taskTitle.trim()) {
+      addTaskToList(list.id, taskTitle);  // llamar a la función que actualiza en App.js
       setNewTask('');                   // limpiar input
     }
   }
@@ -32,22 +41,27 @@ function ListView({ lists, addTaskToList }) {
     <div className="list-container">
       {/* Botón para volver atrás */}
       {/* Este botón utiliza la función navigate para volver a la página anterior */}
-      <button onClick={() => navigate(-1)}>← Back</button>
-      <h3>{list.title}</h3>
+      <button className = "backButton" onClick={() => navigate(-1)}><IoIosArrowBack /></button>
+      <h3 className='ListHeader'>{list.title}</h3>
       <div className="tasks-wrapper">
         {list.tasks.map((task, index) => (     // aquí usas list.tasks 
             <TaskItem key={index} text={task} />
         ))}
       </div>
 
-      <input 
-        type="text" 
-        value={newTask} 
-        onChange={(e) => setNewTask(e.target.value)} 
-        placeholder="Add a new task"
-      />
       <button onClick={handleAddTask}>Add Task</button>
+
+       {/*si showAddTaskPopUp esta activo muestra el pop up con estos valores para rellenarlo*/}
+       {showAddTaskPopUp && (
+              <AddPopUp
+                title="Add new task"
+                placeholder="Task name"
+                onAdd={addTask}
+                onClose={() => setShowAddTaskPopUp(false)}
+              />
+            )}
     </div>
+     
   );
 }
 

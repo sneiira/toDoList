@@ -1,0 +1,29 @@
+.backButton{
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: none;
+  border: none;
+  font-size: 35px;
+  color: rgb(110, 107, 107);
+  cursor: pointer;
+}
+
+/* Evita que salga un borde al pinchar en el boton */
+.backButton:focus{
+  outline: none;
+}
+
+.ListHeader{
+  position: absolute;
+  top: 50px;
+  font-size: 70px;
+  align-content: left;
+
+}
+
+.task-wrapper{
+    position: absolute;
+    top: 300px;
+}
+

@@ -10,12 +10,6 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-.custom-checkbox :hover {
-  transform: translateY(-3px);
-  box-shadow: 6px 6px 10px rgba(100, 100, 100, 0.5);
-  border-radius: 10px;
-}
-
 .custom-checkbox {
   display: flex;
   align-items: center;
