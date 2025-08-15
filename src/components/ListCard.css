@@ -4,13 +4,14 @@
   margin: 12px 0;
   border-radius: 8px;
   border: 1px solid #000000;
+  background-color: #f0f0f0;
 }
 
 .list-card {
     display: flex;
     width: 200px;
     height: 30px;
-    background-color: white;
+    background-color: #f0f0f0;
     padding: 16px;
     margin: 10px;
     justify-content: left;
@@ -31,4 +32,7 @@
   font-size: 20px;
   cursor: pointer;
   margin-right: auto; /* Alinea el botón a la izquierda */
+}
+.delete-list-button:focus {
+  outline: none; /* Evita el borde al hacer clic */
 }

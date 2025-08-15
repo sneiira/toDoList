@@ -14,7 +14,7 @@
   outline: none;
 }
 .list-container {
-  padding-top: 60px; /* Espacio fijo debajo del título principal */
+  padding-top: 0px; /* Espacio fijo debajo del título principal */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -24,9 +24,10 @@
   font-size: 70px;
   text-align: center;
   width: 100%;
+  color: #ffffff;
 }
 .tasks-wrapper {
-  margin-top: 20px;
+  margin-top: 0px;
   max-height: 40vh;
   overflow-y: auto;
   scrollbar-width: none;
@@ -38,4 +39,18 @@
   display: none; /* Chrome, Safari, Edge */
 }
 
+.add-button {
+  background-color: #013816;
+  color: #ffffff;
+  padding: 0.5rem; /* menos padding para que no sea tan grande */
+  cursor: pointer;
+  font-size: 2rem; /* ajusta el tamaño del icono */
+  display: flex; /* permite centrar contenido */
+  justify-content: center; /* centra horizontalmente */
+  align-items: center; /* centra verticalmente */
+  border: none; /* opcional: sin borde */
+  border-radius: 10px; /* opcional: esquinas redondeadas */
+  width: 6.5rem; /* botón cuadrado */
+  height: 3.5rem;
+}
 

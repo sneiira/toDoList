@@ -75,7 +75,7 @@ function App() {
             {/* Si no hay listas, muestra un mensaje indicando que no hay listas disponibles */}
             {/* Si hay listas, muestra un contenedor con todas las listas */}
             {lists.length === 0 ? (
-              <p>No lists available. Please add a new list.</p>
+              <p className='no-list-message'>No lists available. Please add a new list.</p>
             ) : (
               <div className="lists-container">
                 {lists.map((list) => (

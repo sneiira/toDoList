@@ -5,15 +5,18 @@
   padding: 10px;
   border: 1px solid #636262;
   border-radius: 8px;
-  width: fit-content;
+  width: 400px;
   background-color: #f4f4f4;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .custom-checkbox {
   display: flex;
   align-items: center;
   cursor: pointer;
+  margin-left: auto;
   
 }
 
@@ -32,8 +35,13 @@
 }
 
 .task-text {
-  margin-right: 10px;
-  font-size: 1rem;
+  flex: 1;            /* Ocupa todo el espacio disponible */
+  font-size: 1.25rem;
+  text-align: left;   /* Alinea el texto a la izquierda */
+  margin-right: 0;    /* Elimina el margen derecho */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .task-text.completed {

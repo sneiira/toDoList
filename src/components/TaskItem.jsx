@@ -13,15 +13,15 @@ function TaskItem({ text }) {
   return (
 
     <div className="task-item">
+      <span className={completed ? "task-text completed" : "task-text"}>
+        {text}
+      </span>
       <label className="custom-checkbox">  
       <input
         type="checkbox"
         checked={completed}
         onChange={toggleCheckbox}
       />
-      <span className={completed ? "task-text completed" : "task-text"}>
-        {text}
-      </span>
       <MdOutlineCheckBox className={`icon ${completed ? "checked" : ""}`} />
       </label>
     </div>

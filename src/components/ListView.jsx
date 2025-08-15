@@ -53,7 +53,7 @@ function ListView({ lists, addTaskToList }) {
         )}
       </div>
 
-      <button onClick={handleAddTask}>Add Task</button>
+      <button className='add-button' onClick={handleAddTask}>Add Task</button>
 
        {/*si showAddTaskPopUp esta activo muestra el pop up con estos valores para rellenarlo*/}
        {showAddTaskPopUp && (
