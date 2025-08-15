@@ -13,11 +13,29 @@
 .backButton:focus{
   outline: none;
 }
-
-.ListHeader{
-  position: absolute;
-  top: 50px;
+.list-container {
+  padding-top: 60px; /* Espacio fijo debajo del título principal */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.ListHeader {
+  margin-top: 0;
   font-size: 70px;
+  text-align: center;
+  width: 100%;
+}
+.tasks-wrapper {
+  margin-top: 20px;
+  max-height: 40vh;
+  overflow-y: auto;
+  scrollbar-width: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.tasks-wrapper::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Edge */
 }
 
 

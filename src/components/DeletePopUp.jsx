@@ -21,7 +21,7 @@ function DeletePopUp({ title, onClose, onDelete }) {
         </button>
         <h3>{title}</h3>
         <div className="popup-actions"> {/* Contenedor para los botones de acción */}
-          <button className="Delete-button" onClick={handleDelete}>
+          <button className="delete-button" onClick={handleDelete}>
             Delete
           </button>
         </div>

@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import './ListCard.css';
-import './DeletePopUp';
+import DeletePopUp from './DeletePopUp';
+import { MdDelete } from "react-icons/md";
 
 
 function ListCard({ id, title, deleteList }) {
@@ -12,13 +13,14 @@ function ListCard({ id, title, deleteList }) {
   }
   return (
     <div className='list-card-container'>
-    {/*Creamos un enlace que lleva a la ruta "/list/:id", donde `id` es el identificador de la lista
-     Este enlace envuelve todo el contenido del componente para que sea clicable*/}
-     <Link to={`/list/${id}`} className="list-card">
-     <h3>{title}</h3>
-     </Link>
-     <button className="delete-button" onClick={handleDelete}>x</button>
-      {showDeletePopUp && (
+      <button className="delete-list-button" onClick={handleDelete}><MdDelete /></button>
+      {/*Creamos un enlace que lleva a la ruta "/list/:id", donde `id` es el identificador de la lista
+      Este enlace envuelve todo el contenido del componente para que sea clicable*/}
+       <Link to={`/list/${id}`} className="list-card">
+       <h3>{title}</h3>
+       </Link>
+     
+       {showDeletePopUp && (
         <DeletePopUp
           title={`Are you sure you want to delete the list "${title}"?`}
           onClose={() => setShowDeletePopUp(false)}

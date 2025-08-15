@@ -1,10 +1,16 @@
+.list-card-container {
+  display: flex;
+  align-items: center;
+  margin: 12px 0;
+  border-radius: 8px;
+  border: 1px solid #000000;
+}
+
 .list-card {
     display: flex;
     width: 200px;
     height: 30px;
-    background-color: #f9f9f9;
-    border: 1px solid #000000;
-    border-radius: 8px;
+    background-color: white;
     padding: 16px;
     margin: 10px;
     justify-content: left;
@@ -16,7 +22,13 @@
 }
 
 .list-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 6px 6px 10px rgba(100, 100, 100, 0.5);
   color : #00a74b;
+}
+.delete-list-button {
+  background-color: transparent;
+  border: none;
+  color: #ff0000;
+  font-size: 20px;
+  cursor: pointer;
+  margin-right: auto; /* Alinea el botón a la izquierda */
 }

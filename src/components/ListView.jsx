@@ -44,9 +44,13 @@ function ListView({ lists, addTaskToList }) {
       <button className = "backButton" onClick={() => navigate(-1)}><IoIosArrowBack /></button>
       <h3 className='ListHeader'>{list.title}</h3>
       <div className="tasks-wrapper">
-        {list.tasks.map((task, index) => (     // aquí usas list.tasks 
-            <TaskItem key={index} text={task} />
-        ))}
+        {list.tasks.length === 0 ? (
+          <p className="no-tasks-message">No tasks yet.</p>
+       ) : (
+         list.tasks.map((task, index) => (
+          <TaskItem key={index} text={task} />
+        ))
+        )}
       </div>
 
       <button onClick={handleAddTask}>Add Task</button>
