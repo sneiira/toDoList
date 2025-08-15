@@ -28,6 +28,14 @@ function App() {
     setLists([...lists, newList]); // Actualiza el estado de las listas añadiendo la nueva lista al final del array con el operador spread (...)
   };
 
+  // Función para eliminar una lista por su ID
+  // Recibe el ID de la lista a eliminar
+  // Utiliza el método filter para crear un nuevo array de listas que no incluya la lista con el ID proporcionado
+  // Si la lista no coincide, simplemente la devuelve sin cambios
+  const deleteList = (id) => {
+  setLists(lists.filter(list => list.id !== id));
+  };
+
 
   // Función para agregar una tarea a una lista específica
   // Recibe el ID de la lista y la tarea a agregar
@@ -50,6 +58,7 @@ function App() {
     }));
   };
 
+
   return (
     // Router permite la navegación entre diferentes rutas de la aplicación
     // Routes define las diferentes rutas que la aplicación puede manejar
@@ -70,7 +79,7 @@ function App() {
             ) : (
               <div className="lists-container">
                 {lists.map((list) => (
-                  <ListCard key={list.id} id={list.id} title={list.title} />
+                  <ListCard key={list.id} id={list.id} title={list.title} deleteList={deleteList} />
                 ))}
               </div>
             )}

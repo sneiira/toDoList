@@ -24,8 +24,8 @@ function AddPopUp({ title, placeholder, onAdd, onClose }) {
         <button
           className="close-button"
           onClick={onClose}
-          aria-label="Cerrar"
-          title="Cerrar"
+          aria-label="Close"
+          title="Close"
         >
           ×
         </button>
